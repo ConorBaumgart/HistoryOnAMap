@@ -1,11 +1,11 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { GoogleMapContainer } from './components/GoogleMapContainer/GoogleMapContainer';
 
 function App() {
   return (
     <div>
-      Hello World
+      <GoogleMapContainer />
     </div>
   );
 }
