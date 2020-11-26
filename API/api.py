@@ -1,5 +1,6 @@
 import flask
 from flask import request, jsonify
+import json
 
 app = flask.Flask(__name__)
 app.config["DEBUG"] = True
@@ -13,6 +14,12 @@ testData = [
     {'lat': 38.84902954, 'lng': 18.62680626 },
 ]
 
+countries = ['Sudan', 'SouthSudan']
+countryData = []
+
+for country in countries:
+    with open('./countrydata/' + country + '/' + country + '.json') as json_file:
+        countryData.append(json.load(json_file))
 
 @app.route('/', methods=['GET'])
 def home():
@@ -20,7 +27,7 @@ def home():
 
 @app.route('/api/resources/countrydata/all', methods=['GET'])
 def country_data_all():
-    response = jsonify(testData)
+    response = jsonify(countryData)
     response.headers.add('Access-Control-Allow-Origin', '*')
     return response
 
