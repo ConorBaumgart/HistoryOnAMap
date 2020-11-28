@@ -14,7 +14,7 @@ testData = [
     {'lat': 38.84902954, 'lng': 18.62680626 },
 ]
 
-countries = ['Sudan', 'SouthSudan']
+countries = ['Sudan', 'SouthSudan', 'Sudan01012011']
 countryData = []
 
 for country in countries:
