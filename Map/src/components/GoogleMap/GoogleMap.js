@@ -5,5 +5,9 @@ export const GoogleMap = () => {
         center: {lat: -34.397, lng: 150.644},
         zoom: 8
       });
-      return map;
+    return (
+      <div class="world-map">
+        {map}
+      </div>
+    )
 }

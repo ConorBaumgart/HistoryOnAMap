@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import { Map, Polygon, GoogleApiWrapper } from 'google-maps-react';
+import { SearchBox } from './components/SearchBox/SearchBox';
 
 const App = (props) => {
 
@@ -19,6 +20,7 @@ const App = (props) => {
   return (
     <div className="App">
       <Map
+        className="world-map"
         google={props.google}
         initialCenter={{
           lat: 15.5015341,
@@ -35,6 +37,7 @@ const App = (props) => {
           paths={mapData[2]}
         />
       </Map>
+      <SearchBox />
     </div>
   )
 }
