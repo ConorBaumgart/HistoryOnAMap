@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import { Map, Polygon, GoogleApiWrapper } from 'google-maps-react';
-import axios from 'axios';
 
 const App = (props) => {
 
@@ -20,10 +18,6 @@ const App = (props) => {
 
   return (
     <div className="App">
-      <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-        <h1 className="App-title">Google Map with React</h1>
-      </header>
       <Map
         google={props.google}
         initialCenter={{
@@ -38,7 +32,7 @@ const App = (props) => {
           strokeWeight={2}
           fillColor="#0000FF"
           fillOpacity={0.35}
-          paths={mapData}
+          paths={mapData[2]}
         />
       </Map>
     </div>
