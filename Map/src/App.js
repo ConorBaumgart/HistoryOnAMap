@@ -10,8 +10,6 @@ const App = (props) => {
   const fetchData = async () => {
     const apiCall = await fetch('http://localhost:5000/api/resources/countrydata/all');
     const mapData = await apiCall.json();
-    console.log('fetch data');
-    console.log(mapData);
     setMapData(mapData);
   }
 
@@ -32,12 +30,13 @@ const App = (props) => {
       >
         {mapData.map((country) => (
           <Polygon
+            key={country.name}
             strokeColor="#0000FF"
             strokeOpacity={0.8}
             strokeWeight={2}
             fillColor="#0000FF"
             fillOpacity={0.35}
-            paths={country}
+            paths={country.data}
           />
         ))}
       </Map>

@@ -20,7 +20,7 @@ countryData = []
 for country in countries:
     with open('./countrydata/' + country + '/' + country + '.json') as json_file:
         jsonObj = json.load(json_file)
-        countryData.append(jsonObj['data'])
+        countryData.append(jsonObj)
 
 @app.route('/', methods=['GET'])
 def home():
