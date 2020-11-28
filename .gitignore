@@ -3,3 +3,6 @@ Map/node_modules/*
 
 # OS generated files
 .DS_Store
+
+#Folder used to merge maps
+API/countrydata/MergingFolder/
