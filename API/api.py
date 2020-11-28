@@ -14,12 +14,13 @@ testData = [
     {'lat': 38.84902954, 'lng': 18.62680626 },
 ]
 
-countries = ['Sudan', 'SouthSudan', 'Sudan01012011']
+countries = ['Sudan2011']
 countryData = []
 
 for country in countries:
     with open('./countrydata/' + country + '/' + country + '.json') as json_file:
-        countryData.append(json.load(json_file))
+        jsonObj = json.load(json_file)
+        countryData.append(jsonObj['data'])
 
 @app.route('/', methods=['GET'])
 def home():
